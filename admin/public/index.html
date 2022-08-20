@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
+
+  <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" crossorigin></script>
+
+  <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- CSS files -->
+  <link href="/css/tabler.min.css" rel="stylesheet" />
+  <link href="/css/tabler-flags.min.css" rel="stylesheet" />
+  <link href="/css/tabler-payments.min.css" rel="stylesheet" />
+  <link href="/css/tabler-vendors.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+
+  <link href="/libs/filepond/filepond.min.css" rel="stylesheet" />
+  <link href="/libs/filepond/filepond-plugin-image-preview.css" rel="stylesheet" />
+  <link href="/libs/toastr/toastr.min.css" rel="stylesheet" />
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
+  <link href="/css/custom.css" rel="stylesheet" />
+  <!--    <link rel="icon" href="data:;base64,iVBORw0KGgo=">-->
+  <link rel="shortcut icon" href="/img/m_logo.svg" type="image/svg+xml">
+
+  <!-- CSS Section -->
+
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>관리자 메인</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+<!-- Libs JS -->
+<script src="/libs/litepicker/dist/litepicker.js"></script>
+<script src="/libs/filepond/filepond-plugin-image-preview.js"></script>
+<script src="/libs/filepond/filepond-plugin-file-validate-size.js"></script>
+<script src="/libs/filepond/filepond.min.js"></script>
+<!-- Tabler Core -->
+<script src="/js/tabler.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/libs/validate/jquery.validate.min.js"></script>
+<script src="/libs/momentjs/moment.min.js"></script>
+<script src="/libs/toastr/toastr.min.js"></script>
+<script src="/libs/accounting/accounting.min.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script src="/libs/howler.min.js"></script>
+<!-- include FilePond jQuery adapter -->
+<script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+<script src="/js/main.js?1660416405"></script>
+<script>
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": true,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": true,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
+  // check every 15 sec and alert notifications comming
+  getNotification();
+  function getNotification() {
+    $.get("/adminnotification/list.asp", null, function (data) {
+      const {
+        chargeRequests = 0,
+        exchangeRequests = 0,
+        casinoChargeRequests = 0,
+        casinoExchangeRequests = 0,
+        oneToOneRequests = 0
+      } = data;
+      $('#a_chargeRequests').text(chargeRequests);
+      $('#a_exchangeRequests').text(exchangeRequests);
+      $('#a_casinoChargeRequests').text(casinoChargeRequests);
+      $('#a_casinoExchangeRequests').text(casinoExchangeRequests);
+      $('#a_oneToOneRequests').text(oneToOneRequests);
+
+      //render notification according to settings
+      if (data.unnoticedNotifications?.length > 0) {
+        processNotifications(data.notificationSettings, data.unnoticedNotifications);
+      } else {
+        if (chargeRequests !== 0 || exchangeRequests !== 0 || casinoChargeRequests !== 0
+          || casinoExchangeRequests !== 0 || oneToOneRequests !== 0) {
+          const sound = new Howl({
+            src: "/sounds/alert.mp3",
+            autoplay: false,
+            //loop: soundList[i].loop,
+            volume: 1.0
+          });
+          sound.play();
+        }
+      }
+    }).always(function () {
+      setTimeout(() => getNotification(), 15 * 1000);
+    });
+  }
+
+  function processNotifications(settings, notifications) {
+    //types are 
+    //USER_REGISTER(1)
+    //ONE_TO_ONE_MESSAGE(2)
+    //SPORTS_BETTING(3)
+    //LARGE_BETTING(4)
+    //SPECIFIC_USER_BETTING(5)
+    //CURRENCY_REQUEST(6)
+    //EXCHANGE_REQUEST(7)
+    //CASINO_RECHARGE_REQUEST(8)
+    //CASINO_EXCHANGE_REQUEST(9)
+
+    for (var i = 0; i < notifications.length; i++) {
+      if (notifications[i].notificationType === 1) { //USER_REGISTER
+        handleDisplayIndividualNotification(
+          (settings.userRegisterPopupEnabled || false),
+          (settings.userRegisterSoundEnabled || false),
+          (settings.userRegisterSoundUrl?.length > 0 ? settings.userRegisterSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[회원가입] ${notifications[i].text}` : "새로운 회원가입 알림")
+        );
+      } else if (notifications[i].notificationType === 2) { //ONE_TO_ONE_MESSAGE
+        handleDisplayIndividualNotification(
+          (settings.oneToOnePopupEnabled || false),
+          (settings.oneToOneSoundEnabled || false),
+          (settings.oneToOneSoundUrl?.length > 0 ? settings.oneToOneSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[1:1문의] ${notifications[i].text}` : "새로운 1:1문의 알림")
+        );
+      } else if (notifications[i].notificationType === 3) { //SPORTS_BETTING
+        handleDisplayIndividualNotification(
+          (settings.sportBettingPopupEnabled || false),
+          (settings.sportBettingSoundEnabled || false),
+          (settings.sportBettingSoundUrl?.length > 0 ? settings.sportBettingSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[스포츠배팅] ${notifications[i].text}` : "새로운 스포츠배팅 알림")
+        );
+      } else if (notifications[i].notificationType === 4) { //LARGE_BETTING
+        handleDisplayIndividualNotification(
+          (settings.largeBettingPopupEnabled || false),
+          (settings.largeBettingSoundEnabled || false),
+          (settings.largeBettingSoundUrl?.length > 0 ? settings.largeBettingSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[고액배팅] ${notifications[i].text}` : "새로운 고액배팅 알림")
+        );
+      } else if (notifications[i].notificationType === 5) { //SPECIFIC_USER_BETTING
+        handleDisplayIndividualNotification(
+          (settings.bettingNotificationPopupEnabled || false),
+          (settings.bettingNotificationSoundEnabled || false),
+          (settings.bettingNotificationSoundUrl?.length > 0 ? settings.bettingNotificationSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[배팅알람대상ID] ${notifications[i].text}` : "새로운 배팅알람대상ID 알림")
+        );
+      } else if (notifications[i].notificationType === 6) { //CURRENCY_REQUEST
+        handleDisplayIndividualNotification(
+          (settings.currencyTransactionPopupEnabled || false),
+          (settings.currencyTransactionSoundEnabled || false),
+          (settings.currencyTransactionSoundUrl?.length > 0 ? settings.currencyTransactionSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[충전신청] ${notifications[i].text}` : "새로운 충전신청 알림")
+        );
+      } else if (notifications[i].notificationType === 7) { //EXCHANGE_REQUEST
+        handleDisplayIndividualNotification(
+          (settings.exchangeTransactionPopupEnabled || false),
+          (settings.exchangeTransactionSoundEnabled || false),
+          (settings.exchangeTransactionSoundUrl?.length > 0 ? settings.exchangeTransactionSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[환전신청] ${notifications[i].text}` : "새로운 환전신청 알림")
+        );
+      } else if (notifications[i].notificationType === 8) { //CASINO_RECHARGE_REQUEST
+        handleDisplayIndividualNotification(
+          (settings.casinoCurrencyTransactionPopupEnabled || false),
+          (settings.casinoCurrencyTransactionSoundEnabled || false),
+          (settings.casinoCurrencyTransactionSoundUrl?.length > 0 ? settings.casinoCurrencyTransactionSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[카지노충전신청] ${notifications[i].text}` : "새로운 카지노충전신청 알림")
+        );
+      } else if (notifications[i].notificationType === 9) { //CASINO_EXCHANGE_REQUEST
+        handleDisplayIndividualNotification(
+          (settings.casinoExchangeTransactionPopupEnabled || false),
+          (settings.casinoExchangeTransactionSoundEnabled || false),
+          (settings.casinoExchangeTransactionSoundUrl?.length > 0 ? settings.casinoExchangeTransactionSoundUrl : "/sounds/alert.mp3"),
+          (notifications[i].text?.length > 0 ? `[카지노환전신청] ${notifications[i].text}` : "새로운 카지노환전신청 알림")
+        );
+      }
+    }
+  }
+
+  function handleDisplayIndividualNotification(shouldShowToaster, shouldPlaySound, soundUrl, notificationText) {
+    if (shouldShowToaster) {
+      toastr.info(notificationText);
+    }
+    if (shouldPlaySound) {
+      const sound = new Howl({
+        src: soundUrl,
+        autoplay: false,
+        volume: 1.0
+      });
+      sound.play();
+    }
+  }
+</script>
+<!-- Scripts Section -->
+
+</html>

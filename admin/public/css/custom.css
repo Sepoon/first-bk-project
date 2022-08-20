@@ -1,0 +1,470 @@
+@import url("https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800|Noto+Sans+KR:400,500,700");
+
+body{
+	color:#1b273c;
+	font-family: "Noto Sans KR", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.navbar-dark {
+    background: #212d3b;
+}
+
+#fullpage-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgb(255 255 255 / 50%);
+    text-align: center;
+    padding-top: 20%;
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-dark .nav-item.active .nav-link, .navbar-expand-md.navbar-dark .nav-item.active .nav-link {
+        background-color: #161e27;
+    }
+    .navbar-expand-md .navbar-light .nav-item.active:after, .navbar-expand-md.navbar-light .nav-item.active:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -.25rem;
+        border: 0 solid #206bc4;
+        border-bottom-width: 5px;
+    }
+}
+
+.navbar-expand-md .navbar {
+    background: #19222c;
+}
+
+    .navbar-expand-md .navbar .navbar-nav .nav-link {
+        color: #8392a0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+	.navbar-expand-md .navbar .navbar-nav .nav-link:hover{
+		color: #fff;
+		
+	}
+        .navbar-expand-md .navbar .navbar-nav .active > .nav-link, .navbar-expand-md .navbar .navbar-nav .nav-link.active, .navbar-expand-md .navbar .navbar-nav .nav-link.show, .navbar-expand-md .navbar .navbar-nav .show > .nav-link {
+            color: #ffffff;
+        }
+
+.quickaction-tray {
+    z-index: 0 !important;
+    padding-top: 113px;
+    background: #19222c;
+}
+
+.quickaction-tray.nosub-menu {
+    padding-top: 55px;
+}
+
+.quickaction-title {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    background: #19222c;
+    color: white;
+    border-bottom: 1px solid #000;
+}
+
+.quickaction-item, .quickaction-item:focus {
+    display: block;
+    padding: 25px 20px 0px 20px;
+    color: #8392a0;
+    text-decoration: none;
+	transition: .3s;
+}
+.quickaction-item:hover{
+	color: #fff;
+	text-decoration: none;
+}
+    .quickaction-item i {
+        color: #a9b5bf;
+    }
+
+@media (max-width: 991.98px) {
+    .quickaction-tray {
+       display: none;
+    }
+}
+.a-divider{
+	margin-left: 7px;
+    margin-right: 7px;
+    color: #dadada;
+}
+.note{
+	font-size: 13px;
+}
+
+.admin-dashboard-page td, .admin-dashboard-page th, .admin-dashboard-page tr {
+    border-width: 1px;
+}
+
+.admin-dashboard-page .table-responsive {
+    margin-bottom: 0px;
+}
+
+.form-group.row .form-label {
+    text-align: right;
+    font-size: 13px;
+}
+
+.page-item.active .page-link{
+    pointer-events: none;
+}
+
+.table tr td{
+    max-width: 250px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.table tr th[align=center], .table tr td[align=center] {
+    text-align: center;
+}
+
+.markdown>table thead th, .table thead th {
+    font-size: 13px;
+}
+
+.hr-margin10 {
+    margin: 10px 0px;
+}
+
+.modal-footer {
+    padding-top: 1.125rem;
+    border-top: 1px solid #e6e8e9;
+}
+
+
+/* fold table */
+.row-header
+{
+    cursor:pointer;
+}
+/* end fold table */
+
+/* fix when using color circle in table */
+.table .form-colorinput-color:before {
+    content: unset;
+}
+
+.table-compact {
+    font-size: 12px;
+}
+.table-compact tr td, .table-compact tr th {
+    padding: 8px 5px;
+    font-size: 12px;
+}
+
+.table-compact tr.registered td {
+    background: #faf8d0;
+}
+
+.table-compact tr.betslip-item-header td {
+    background: #eeeeee;
+    border-top: 2px solid;
+}
+.table-compact input[type=number], .table-compact select {
+    font-size: 12px;
+    padding: 5px;
+}
+.table-compact tr td.selected {
+    background: #d6f3ff;
+}
+.table-compact .bold {
+    font-weight: bold;
+}
+
+.col-15 {
+    flex: 0 0 auto;
+    width: 12.5%;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+.betting-rules-filter span { padding-bottom: 9px; }
+
+.sort-item {
+    cursor: pointer;
+    color: initial;
+}
+.sort-item:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+.form-signin {
+    position: absolute;
+    padding: 6% 2rem 1rem 2rem;
+    overflow: hidden;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 430px;
+    margin: 0 auto;
+}
+
+.login-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: url(/assets/images/bg-2.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-signin-heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #595d6e;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.form-signin-logo {
+    text-align: center;
+    margin: 0 auto 2rem  auto;
+}
+
+.form-signin .form-control {
+    height: 46px;
+    border: none;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 46px;
+    margin-top: 1.5rem;
+    background: rgba(255, 255, 255, 0.015);
+    color: #fff;
+}
+
+.form-signin .form-control:focus {
+    box-shadow: none;
+}
+
+.form-signin button[type=submit] {
+    height: 50px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.form-signin .form-control::-moz-placeholder {
+    color: #595d6e;
+    opacity: 1;
+}
+.form-signin .form-control:-ms-input-placeholder {
+    color: #595d6e;
+}
+.form-signin .form-control::-webkit-input-placeholder {
+    color: #595d6e;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.btn-pill.active {
+    background-color: #fff;
+}
+
+.form-control-plaintext {
+    overflow-wrap: anywhere;
+}
+
+.dropdown-menu {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+.item-group{
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+.item-group lable{
+    width: 20%;
+    color:#737a8a;
+}
+.item-list .item-group:last-child{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.button-previous-month svg, button-next-month svg {
+    fill: var(--litepicker-button-next-month-color) !important;
+}
+.total{
+    margin: 15px 0;
+    padding-top: 15px;
+    border-top: 1px solid #e5e5e5;
+    font-weight: bold;
+}
+.cs-item{
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.cs-card .cs-item:last-child{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.cs-card .email-col{
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+.form-control[readonly]{background-color: #fff;}
+.userlist-total{
+    display: flex;
+    justify-content: space-between;
+}
+.userlist-total .li-divider{
+    margin: 0 7px;
+}
+.sitehome-btn{
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.alarms-section {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    background: black;    
+    font-size: 13px;
+}
+.alarms-section a{
+    margin-right: 7px;
+    color: #8392a0;
+}
+.alarms-section a:hover{
+    color:#fff;
+    text-decoration: none;
+}
+
+.alarms-section .item + .item::before {
+    color: #8392a0;
+    content: "/";
+    padding-right: 0.5rem;
+}
+.alarms-section a.active {
+    color:#ffffff;
+}
+
+#partner-table .level1 {
+    font-weight: bold;
+    color: #e73030;
+    text-align: left;
+}
+
+#partner-table .level2 {
+    font-weight: bold;
+    text-align: center;
+    color: green;
+}
+
+#partner-table .level3 {
+    font-weight: bold;
+    text-align: right;
+}
+
+.image-url-input, .image-url-input .filepond--root {
+    max-height: 100px;
+}
+
+.image-url-input .filepond--root {
+    max-height: calc(100px - 1.5rem);
+}
+
+.user-levels-table th{
+    min-width: 150px;
+}
+
+.user-levels-table th:nth-child(1){
+    min-width: 50px;
+}
+
+#user-info-modal .modal-title {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+#user-info-modal .modal-title>span:not(.active) {
+    font-weight: 300;
+}
+
+#user-info-modal .modal-dialog {
+    max-width: 80%;
+    min-height: 80vh;
+}
+
+#user-info-modal .modal-dialog .modal-content {
+    min-height: 80vh;
+}
+
+.manualsettle-table tr td:first-child, .manualsettle-table tr th:first-child{
+    padding-left: 0.5rem;
+}
+.manualsettle-table tr td:last-child, .manualsettle-table tr th:last-child{
+    padding-right: 0.5rem;
+}
+.manualsettle-table .marketname-header td{
+    background: #eeeeee;
+    border-top: 2px solid;
+    font-weight: bold;
+}
+.manualsettle-table tr td.selected {
+    background: #d6f3ff;
+    font-weight: bold;
+}
+
+.show-match-betting-list-modal {
+    cursor: pointer;
+}
+.pointer {
+    cursor: pointer;
+}
+
+.ball {
+    background-color: green;
+    color: white;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+}
+
+.ball+.ball {
+    margin-left: .25rem;
+}
+
+.ball.powerball {
+    background-color: orange;
+}
