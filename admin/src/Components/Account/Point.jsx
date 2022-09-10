@@ -1,61 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import UserInfo from "../Popup/UserInfo";
 
 const Point = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <section className="page-wrapper">
-        <div className="alarms-section">
-          <a href="/transaction/currency.asp" className="item">
-            충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_chargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/transaction/exchange.asp" className="item">
-            환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_exchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoChargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoExchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/cs/list.asp" className="item">
-            1:1문의(
-            <span
-              className="text-success font-weight-bold"
-              id="a_oneToOneRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-        </div>
         <div className="container-fluid">
           {/* <!-- Page title --> */}
           <div className="page-header d-print-none">
@@ -245,8 +198,9 @@ const Point = () => {
                           <td>227</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="46"
                             >
                               jackylu1
@@ -267,8 +221,9 @@ const Point = () => {
                           <td>226</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="137"
                             >
                               kaka18
@@ -289,8 +244,9 @@ const Point = () => {
                           <td>225</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="136"
                             >
                               kaka17
@@ -311,8 +267,9 @@ const Point = () => {
                           <td>224</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="135"
                             >
                               kaka16
@@ -333,8 +290,9 @@ const Point = () => {
                           <td>223</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="134"
                             >
                               tsara9
@@ -355,8 +313,9 @@ const Point = () => {
                           <td>222</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -377,8 +336,9 @@ const Point = () => {
                           <td>221</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="133"
                             >
                               tsara8
@@ -399,8 +359,9 @@ const Point = () => {
                           <td>220</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -421,8 +382,9 @@ const Point = () => {
                           <td>219</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="132"
                             >
                               tsara7
@@ -443,8 +405,9 @@ const Point = () => {
                           <td>218</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="131"
                             >
                               tsara6
@@ -465,8 +428,9 @@ const Point = () => {
                           <td>217</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="130"
                             >
                               tsara5
@@ -487,8 +451,9 @@ const Point = () => {
                           <td>216</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="46"
                             >
                               jackylu1
@@ -509,8 +474,9 @@ const Point = () => {
                           <td>215</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="129"
                             >
                               kaka15
@@ -531,8 +497,9 @@ const Point = () => {
                           <td>214</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -553,8 +520,9 @@ const Point = () => {
                           <td>213</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="127"
                             >
                               tsara4
@@ -575,8 +543,9 @@ const Point = () => {
                           <td>212</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="126"
                             >
                               tsara3
@@ -597,8 +566,9 @@ const Point = () => {
                           <td>211</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -619,8 +589,9 @@ const Point = () => {
                           <td>210</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="125"
                             >
                               kaka13
@@ -641,8 +612,9 @@ const Point = () => {
                           <td>209</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="46"
                             >
                               jackylu1
@@ -663,8 +635,9 @@ const Point = () => {
                           <td>208</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="124"
                             >
                               kaka12
@@ -685,8 +658,9 @@ const Point = () => {
                           <td>207</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="46"
                             >
                               jackylu1
@@ -707,8 +681,9 @@ const Point = () => {
                           <td>206</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -729,8 +704,9 @@ const Point = () => {
                           <td>205</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="46"
                             >
                               jackylu1
@@ -751,8 +727,9 @@ const Point = () => {
                           <td>204</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="122"
                             >
                               tsara2
@@ -773,8 +750,9 @@ const Point = () => {
                           <td>203</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="20"
                             >
                               sara
@@ -795,8 +773,9 @@ const Point = () => {
                           <td>202</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="121"
                             >
                               tsara 1
@@ -817,8 +796,9 @@ const Point = () => {
                           <td>201</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="20"
                             >
                               sara
@@ -839,8 +819,9 @@ const Point = () => {
                           <td>199</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -861,8 +842,9 @@ const Point = () => {
                           <td>198</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="106"
                             >
                               test고고고
@@ -883,8 +865,9 @@ const Point = () => {
                           <td>195</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="89"
                             >
                               테스트랍니다1
@@ -1038,6 +1021,7 @@ const Point = () => {
           </div>
         </div>
       </section>
+      <UserInfo show={show} handleClose={handleClose} />
     </>
   );
 };

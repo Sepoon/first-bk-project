@@ -1,61 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import UserInfo from "../Popup/UserInfo";
 
 const BetCancel = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <section className="page-wrapper">
-        <div className="alarms-section">
-          <a href="/transaction/currency.asp" className="item">
-            충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_chargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/transaction/exchange.asp" className="item">
-            환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_exchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoChargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoExchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/cs/list.asp" className="item">
-            1:1문의(
-            <span
-              className="text-success font-weight-bold"
-              id="a_oneToOneRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-        </div>
         <div className="container-fluid">
           {/* <!-- Page title --> */}
           <div className="page-header d-print-none">
@@ -79,7 +32,7 @@ const BetCancel = () => {
 
             <div className="row align-items-center g-2">
               <div className="col-5">
-                <div className="btn-list" style={{flexwrap: 'nowrap'}}>
+                <div className="btn-list" style={{ flexwrap: "nowrap" }}>
                   <span className="d-none d-sm-inline">
                     <input
                       className="form-control"
@@ -182,8 +135,9 @@ const BetCancel = () => {
                           <td>2021-10-28 11:49:10</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="21"
                             >
                               sara2
@@ -217,7 +171,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="77">
+                        <tr style={{ display: "none" }} data-betslipid="77">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -339,8 +293,9 @@ const BetCancel = () => {
                           <td>2021-11-05 23:11:21</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="48"
                             >
                               lilyhuynh
@@ -374,7 +329,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="117">
+                        <tr style={{ display: "none" }} data-betslipid="117">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -430,8 +385,9 @@ const BetCancel = () => {
                           <td>2021-11-08 00:41:41</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="32"
                             >
                               testguy
@@ -465,7 +421,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="165">
+                        <tr style={{ display: "none" }} data-betslipid="165">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -584,8 +540,9 @@ const BetCancel = () => {
                           <td>2021-11-08 14:31:53</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="55"
                             >
                               tester1
@@ -619,7 +576,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="186">
+                        <tr style={{ display: "none" }} data-betslipid="186">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -741,8 +698,9 @@ const BetCancel = () => {
                           <td>2021-11-08 14:33:37</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="55"
                             >
                               tester1
@@ -776,7 +734,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="187">
+                        <tr style={{ display: "none" }} data-betslipid="187">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -898,8 +856,9 @@ const BetCancel = () => {
                           <td>2021-12-17 11:08:40</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="72"
                             >
                               jackylu8
@@ -933,7 +892,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="305">
+                        <tr style={{ display: "none" }} data-betslipid="305">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -1055,8 +1014,9 @@ const BetCancel = () => {
                           <td>2022-01-08 04:40:42</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="77"
                             >
                               yangpa
@@ -1090,7 +1050,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="361">
+                        <tr style={{ display: "none" }} data-betslipid="361">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -1462,8 +1422,9 @@ const BetCancel = () => {
                           <td>2022-01-21 10:33:06</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -1497,7 +1458,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="427">
+                        <tr style={{ display: "none" }} data-betslipid="427">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -1777,8 +1738,9 @@ const BetCancel = () => {
                           <td>2022-01-21 14:51:24</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               kk0972
@@ -1812,7 +1774,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="428">
+                        <tr style={{ display: "none" }} data-betslipid="428">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -2072,8 +2034,9 @@ const BetCancel = () => {
                           <td>2022-01-21 14:53:27</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               kk0972
@@ -2107,7 +2070,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="429">
+                        <tr style={{ display: "none" }} data-betslipid="429">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -2370,8 +2333,9 @@ const BetCancel = () => {
                           <td>2022-01-21 14:54:23</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -2405,7 +2369,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="430">
+                        <tr style={{ display: "none" }} data-betslipid="430">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -2524,8 +2488,9 @@ const BetCancel = () => {
                           <td>2022-01-21 15:06:05</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -2559,7 +2524,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="431">
+                        <tr style={{ display: "none" }} data-betslipid="431">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -2678,8 +2643,9 @@ const BetCancel = () => {
                           <td>2022-01-21 15:07:00</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -2713,7 +2679,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="432">
+                        <tr style={{ display: "none" }} data-betslipid="432">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -2832,8 +2798,9 @@ const BetCancel = () => {
                           <td>2022-01-21 15:08:01</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -2867,7 +2834,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="433">
+                        <tr style={{ display: "none" }} data-betslipid="433">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -2986,8 +2953,9 @@ const BetCancel = () => {
                           <td>2022-01-21 15:19:13</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -3021,7 +2989,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="434">
+                        <tr style={{ display: "none" }} data-betslipid="434">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -3140,8 +3108,9 @@ const BetCancel = () => {
                           <td>2022-01-26 16:27:12</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -3175,7 +3144,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="458">
+                        <tr style={{ display: "none" }} data-betslipid="458">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -3297,8 +3266,9 @@ const BetCancel = () => {
                           <td>2022-01-26 16:27:34</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -3332,7 +3302,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="459">
+                        <tr style={{ display: "none" }} data-betslipid="459">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -3454,8 +3424,9 @@ const BetCancel = () => {
                           <td>2022-01-26 16:29:24</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -3489,7 +3460,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="460">
+                        <tr style={{ display: "none" }} data-betslipid="460">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -3611,8 +3582,9 @@ const BetCancel = () => {
                           <td>2022-01-26 16:30:15</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -3646,7 +3618,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="461">
+                        <tr style={{ display: "none" }} data-betslipid="461">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -3768,8 +3740,9 @@ const BetCancel = () => {
                           <td>2022-01-26 16:31:23</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -3803,7 +3776,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="463">
+                        <tr style={{ display: "none" }} data-betslipid="463">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -3925,8 +3898,9 @@ const BetCancel = () => {
                           <td>2022-01-26 16:34:11</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               kk0972
@@ -3960,7 +3934,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="466">
+                        <tr style={{ display: "none" }} data-betslipid="466">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -4082,8 +4056,9 @@ const BetCancel = () => {
                           <td>2022-01-26 17:12:39</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -4117,7 +4092,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="481">
+                        <tr style={{ display: "none" }} data-betslipid="481">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -4318,8 +4293,9 @@ const BetCancel = () => {
                           <td>2022-01-26 17:50:56</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               kk0972
@@ -4353,7 +4329,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="482">
+                        <tr style={{ display: "none" }} data-betslipid="482">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -4475,8 +4451,9 @@ const BetCancel = () => {
                           <td>2022-01-27 16:09:15</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -4510,7 +4487,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="493">
+                        <tr style={{ display: "none" }} data-betslipid="493">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -4566,8 +4543,9 @@ const BetCancel = () => {
                           <td>2022-01-27 16:17:25</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test1515
@@ -4601,7 +4579,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="500">
+                        <tr style={{ display: "none" }} data-betslipid="500">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -4657,8 +4635,9 @@ const BetCancel = () => {
                           <td>2022-02-15 17:28:57</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -4692,7 +4671,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="509">
+                        <tr style={{ display: "none" }} data-betslipid="509">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -4814,8 +4793,9 @@ const BetCancel = () => {
                           <td>2022-02-18 13:50:09</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -4849,7 +4829,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="513">
+                        <tr style={{ display: "none" }} data-betslipid="513">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -4968,8 +4948,9 @@ const BetCancel = () => {
                           <td>2022-02-23 12:35:20</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="106"
                             >
                               test1415
@@ -5003,7 +4984,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="518">
+                        <tr style={{ display: "none" }} data-betslipid="518">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -5125,8 +5106,9 @@ const BetCancel = () => {
                           <td>2022-02-23 12:35:40</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="106"
                             >
                               test1415
@@ -5160,7 +5142,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="519">
+                        <tr style={{ display: "none" }} data-betslipid="519">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -5446,8 +5428,9 @@ const BetCancel = () => {
                           <td>2022-02-26 02:32:00</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -5481,7 +5464,7 @@ const BetCancel = () => {
                             <i className="ti ti-chevron-down"></i>
                           </td>
                         </tr>
-                        <tr style={{display: 'none'}} data-betslipid="540">
+                        <tr style={{ display: "none" }} data-betslipid="540">
                           <td colSpan="11">
                             <table className="table card-table table-vcenter text-nowrap datatable table-bordered table-compact">
                               <thead>
@@ -5613,6 +5596,7 @@ const BetCancel = () => {
           </div>
         </div>
       </section>
+      <UserInfo show={show} handleClose={handleClose} />
     </>
   );
 };

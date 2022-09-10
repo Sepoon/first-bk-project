@@ -1,61 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import UserInfo from "../Popup/UserInfo";
 
 const WaitCalculate = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <section className="page-wrapper">
-        <div className="alarms-section">
-          <a href="/transaction/currency.asp" className="item">
-            충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_chargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/transaction/exchange.asp" className="item">
-            환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_exchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoChargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoExchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/cs/list.asp" className="item">
-            1:1문의(
-            <span
-              className="text-success font-weight-bold"
-              id="a_oneToOneRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-        </div>
         <div className="container-fluid">
           {/* <!-- Page title --> */}
           <div className="page-header d-print-none">
@@ -163,8 +116,9 @@ const WaitCalculate = () => {
                             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                             <span>
                               <a
-                                className="open-user-info-modal"
                                 href="#"
+                                className="open-user-info-modal"
+                                onClick={handleShow}
                                 data-userid="75"
                               >
                                 kk0972
@@ -275,8 +229,9 @@ const WaitCalculate = () => {
                             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                             <span>
                               <a
-                                className="open-user-info-modal"
                                 href="#"
+                                className="open-user-info-modal"
+                                onClick={handleShow}
                                 data-userid="106"
                               >
                                 test1415
@@ -548,8 +503,9 @@ const WaitCalculate = () => {
                             &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                             <span>
                               <a
-                                className="open-user-info-modal"
                                 href="#"
+                                className="open-user-info-modal"
+                                onClick={handleShow}
                                 data-userid="106"
                               >
                                 test1415
@@ -822,6 +778,7 @@ const WaitCalculate = () => {
           </div>
         </div>
       </section>
+      <UserInfo show={show} handleClose={handleClose} />
     </>
   );
 };

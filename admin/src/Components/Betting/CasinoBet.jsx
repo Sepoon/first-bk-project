@@ -1,61 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
+import UserInfo from "../Popup/UserInfo";
 
 const CasinoBet = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <section className="page-wrapper">
-        <div className="alarms-section">
-          <a href="/transaction/currency.asp" className="item">
-            충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_chargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/transaction/exchange.asp" className="item">
-            환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_exchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoChargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoExchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/cs/list.asp" className="item">
-            1:1문의(
-            <span
-              className="text-success font-weight-bold"
-              id="a_oneToOneRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-        </div>
         <div className="container-fluid">
           {/* <!-- Page title --> */}
           <div className="page-header d-print-none">
@@ -177,8 +130,9 @@ const CasinoBet = () => {
                           <td>2021-12-22 05:46:46</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="77"
                             >
                               yangpa
@@ -233,8 +187,9 @@ const CasinoBet = () => {
                           <td>2021-12-22 05:46:20</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="77"
                             >
                               yangpa
@@ -289,8 +244,9 @@ const CasinoBet = () => {
                           <td>2021-12-22 05:45:27</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="77"
                             >
                               yangpa
@@ -345,8 +301,9 @@ const CasinoBet = () => {
                           <td>2021-12-22 05:38:47</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="77"
                             >
                               yangpa
@@ -401,8 +358,9 @@ const CasinoBet = () => {
                           <td>2021-12-22 05:37:55</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="77"
                             >
                               yangpa
@@ -457,8 +415,9 @@ const CasinoBet = () => {
                           <td>2021-12-17 18:36:02</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="48"
                             >
                               lilyhuynh
@@ -513,8 +472,9 @@ const CasinoBet = () => {
                           <td>2021-12-08 01:27:19</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -569,8 +529,9 @@ const CasinoBet = () => {
                           <td>2021-12-08 01:22:03</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -625,8 +586,9 @@ const CasinoBet = () => {
                           <td>2021-12-08 01:20:52</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -681,8 +643,9 @@ const CasinoBet = () => {
                           <td>2021-12-08 01:15:58</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -737,8 +700,9 @@ const CasinoBet = () => {
                           <td>2021-12-07 23:34:44</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -793,8 +757,9 @@ const CasinoBet = () => {
                           <td>2021-12-06 19:17:37</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -849,8 +814,9 @@ const CasinoBet = () => {
                           <td>2021-12-06 19:12:16</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -905,8 +871,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 19:08:28</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -961,8 +928,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 19:06:41</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -1017,8 +985,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 18:35:44</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -1073,8 +1042,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 18:34:54</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -1129,8 +1099,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 18:34:03</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -1185,8 +1156,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 18:32:19</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -1241,8 +1213,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 18:30:37</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -1297,8 +1270,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 18:06:53</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -1353,8 +1327,9 @@ const CasinoBet = () => {
                           <td>2021-11-30 18:05:11</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -1409,8 +1384,9 @@ const CasinoBet = () => {
                           <td>2021-11-29 17:07:25</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="71"
                             >
                               jackylu7
@@ -1465,8 +1441,9 @@ const CasinoBet = () => {
                           <td>2021-11-29 17:05:20</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="71"
                             >
                               jackylu7
@@ -1521,8 +1498,9 @@ const CasinoBet = () => {
                           <td>2021-11-27 21:23:22</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -1577,8 +1555,9 @@ const CasinoBet = () => {
                           <td>2021-11-27 21:18:47</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -1633,8 +1612,9 @@ const CasinoBet = () => {
                           <td>2021-11-27 21:17:18</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -1689,8 +1669,9 @@ const CasinoBet = () => {
                           <td>2021-11-27 21:16:39</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -1745,8 +1726,9 @@ const CasinoBet = () => {
                           <td>2021-11-27 20:49:09</td>
                           <td>
                             <a
-                              className="open-user-info-modal"
                               href="#"
+                              className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="5"
                             >
                               tuser3
@@ -1804,6 +1786,7 @@ const CasinoBet = () => {
           </div>
         </div>
       </section>
+      <UserInfo show={show} handleClose={handleClose} />
     </>
   );
 };

@@ -1,61 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import UserInfo from "../Popup/UserInfo";
 
 const UserManagement = () => {
+  const [show, setShow] = useState(false);
+
+  const [userName, setUserName] = useState('');
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:3001/users').then((response) => {
+      var ret = response.data;
+      setUserName(ret[0].memberName);
+
+    });
+  }, []);
+
   return (
     <>
       <section className="page-wrapper">
-        <div className="alarms-section">
-          <a href="/transaction/currency.asp" className="item">
-            충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_chargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/transaction/exchange.asp" className="item">
-            환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_exchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoChargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoExchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/cs/list.asp" className="item">
-            1:1문의(
-            <span
-              className="text-success font-weight-bold"
-              id="a_oneToOneRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-        </div>
         <div className="container-fluid">
           {/* <!-- Page title --> */}
           <div className="page-header d-print-none">
@@ -105,7 +70,7 @@ const UserManagement = () => {
                         className="form-control search-input"
                         placeholder="검색…"
                         aria-label="검색"
-                        defaultValue=""
+                        defaultValue={userName}
                       />
                     </div>
                     <button type="submit" className="btn btn-primary ms-2">
@@ -299,7 +264,12 @@ const UserManagement = () => {
                           </td>
                           <td>137</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="137">
+                            <a
+                              href="#"
+                              className="edit-btn"
+                              data-id="137"
+                              onClick={handleShow}
+                            >
                               <u>kaka18 (jackylu1)</u>
                             </a>
                           </td>
@@ -380,7 +350,7 @@ const UserManagement = () => {
                           </td>
                           <td>136</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="136">
+                            <a href="#" className="edit-btn" data-id="136" onClick={handleShow}>
                               <u>kaka17</u>
                             </a>
                           </td>
@@ -461,7 +431,7 @@ const UserManagement = () => {
                           </td>
                           <td>135</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="135">
+                            <a href="#" className="edit-btn" data-id="135" onClick={handleShow}>
                               <u>kaka16</u>
                             </a>
                           </td>
@@ -542,7 +512,7 @@ const UserManagement = () => {
                           </td>
                           <td>134</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="134">
+                            <a href="#" className="edit-btn" data-id="134" onClick={handleShow}>
                               <u>tsara9</u>
                             </a>
                           </td>
@@ -623,7 +593,7 @@ const UserManagement = () => {
                           </td>
                           <td>133</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="133">
+                            <a href="#" className="edit-btn" data-id="133" onClick={handleShow}>
                               <u>tsara8</u>
                             </a>
                           </td>
@@ -704,7 +674,7 @@ const UserManagement = () => {
                           </td>
                           <td>132</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="132">
+                            <a href="#" className="edit-btn" data-id="132" onClick={handleShow}>
                               <u>tsara7</u>
                             </a>
                           </td>
@@ -785,7 +755,7 @@ const UserManagement = () => {
                           </td>
                           <td>131</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="131">
+                            <a href="#" className="edit-btn" data-id="131" onClick={handleShow}>
                               <u>tsara6</u>
                             </a>
                           </td>
@@ -866,7 +836,7 @@ const UserManagement = () => {
                           </td>
                           <td>130</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="130">
+                            <a href="#" className="edit-btn" data-id="130" onClick={handleShow}>
                               <u>tsara5</u>
                             </a>
                           </td>
@@ -947,7 +917,7 @@ const UserManagement = () => {
                           </td>
                           <td>129</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="129">
+                            <a href="#" className="edit-btn" data-id="129" onClick={handleShow}>
                               <u>kaka15 (jackylu1)</u>
                             </a>
                           </td>
@@ -1028,7 +998,7 @@ const UserManagement = () => {
                           </td>
                           <td>128</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="128">
+                            <a href="#" className="edit-btn" data-id="128" onClick={handleShow}>
                               <u>kaka14 (jackylu1)</u>
                             </a>
                           </td>
@@ -1109,7 +1079,7 @@ const UserManagement = () => {
                           </td>
                           <td>127</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="127">
+                            <a href="#" className="edit-btn" data-id="127" onClick={handleShow}>
                               <u>tsara4</u>
                             </a>
                           </td>
@@ -1190,7 +1160,7 @@ const UserManagement = () => {
                           </td>
                           <td>126</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="126">
+                            <a href="#" className="edit-btn" data-id="126" onClick={handleShow}>
                               <u>tsara3</u>
                             </a>
                           </td>
@@ -1271,7 +1241,7 @@ const UserManagement = () => {
                           </td>
                           <td>125</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="125">
+                            <a href="#" className="edit-btn" data-id="125" onClick={handleShow}>
                               <u>kaka13 (jackylu1)</u>
                             </a>
                           </td>
@@ -1352,7 +1322,7 @@ const UserManagement = () => {
                           </td>
                           <td>124</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="124">
+                            <a href="#" className="edit-btn" data-id="124" onClick={handleShow}>
                               <u>kaka12 (jackylu1)</u>
                             </a>
                           </td>
@@ -1433,7 +1403,7 @@ const UserManagement = () => {
                           </td>
                           <td>123</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="123">
+                            <a href="#" className="edit-btn" data-id="123" onClick={handleShow}>
                               <u>kaka11 (jackylu1)</u>
                             </a>
                           </td>
@@ -1514,7 +1484,7 @@ const UserManagement = () => {
                           </td>
                           <td>122</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="122">
+                            <a href="#" className="edit-btn" data-id="122" onClick={handleShow}>
                               <u>tsara2 (sara)</u>
                             </a>
                           </td>
@@ -1595,7 +1565,7 @@ const UserManagement = () => {
                           </td>
                           <td>121</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="121">
+                            <a href="#" className="edit-btn" data-id="121" onClick={handleShow}>
                               <u>tsara 1 (sara)</u>
                             </a>
                           </td>
@@ -1676,7 +1646,7 @@ const UserManagement = () => {
                           </td>
                           <td>120</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="120">
+                            <a href="#" className="edit-btn" data-id="120" onClick={handleShow}>
                               <u>테스트0225</u>
                             </a>
                           </td>
@@ -1757,7 +1727,7 @@ const UserManagement = () => {
                           </td>
                           <td>119</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="119">
+                            <a href="#" className="edit-btn" data-id="119" onClick={handleShow}>
                               <u>테에스으트으</u>
                             </a>
                           </td>
@@ -1838,7 +1808,7 @@ const UserManagement = () => {
                           </td>
                           <td>118</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="118">
+                            <a href="#" className="edit-btn" data-id="118" onClick={handleShow}>
                               <u>0225테스트1</u>
                             </a>
                           </td>
@@ -1919,7 +1889,7 @@ const UserManagement = () => {
                           </td>
                           <td>117</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="117">
+                            <a href="#" className="edit-btn" data-id="117" onClick={handleShow}>
                               <u>0225테스트</u>
                             </a>
                           </td>
@@ -2000,7 +1970,7 @@ const UserManagement = () => {
                           </td>
                           <td>116</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="116">
+                            <a href="#" className="edit-btn" data-id="116" onClick={handleShow}>
                               <u>ㅇ2ㅇ34</u>
                             </a>
                           </td>
@@ -2081,7 +2051,7 @@ const UserManagement = () => {
                           </td>
                           <td>114</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="114">
+                            <a href="#" className="edit-btn" data-id="114" onClick={handleShow}>
                               <u>테스특</u>
                             </a>
                           </td>
@@ -2162,7 +2132,7 @@ const UserManagement = () => {
                           </td>
                           <td>110</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="110">
+                            <a href="#" className="edit-btn" data-id="110" onClick={handleShow}>
                               <u>helloworld (jackylu1)</u>
                             </a>
                           </td>
@@ -2243,7 +2213,7 @@ const UserManagement = () => {
                           </td>
                           <td>109</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="109">
+                            <a href="#" className="edit-btn" data-id="109" onClick={handleShow}>
                               <u>kaka10 (jackylu1)</u>
                             </a>
                           </td>
@@ -2324,7 +2294,7 @@ const UserManagement = () => {
                           </td>
                           <td>108</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="108">
+                            <a href="#" className="edit-btn" data-id="108" onClick={handleShow}>
                               <u>testu2 (jackylu1)</u>
                             </a>
                           </td>
@@ -2405,7 +2375,7 @@ const UserManagement = () => {
                           </td>
                           <td>107</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="107">
+                            <a href="#" className="edit-btn" data-id="107" onClick={handleShow}>
                               <u>testu1 (jackylu1)</u>
                             </a>
                           </td>
@@ -2486,7 +2456,7 @@ const UserManagement = () => {
                           </td>
                           <td>106</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="106">
+                            <a href="#" className="edit-btn" data-id="106" onClick={handleShow}>
                               <u>test고고고</u>
                             </a>
                           </td>
@@ -2567,7 +2537,7 @@ const UserManagement = () => {
                           </td>
                           <td>103</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="103">
+                            <a href="#" className="edit-btn" data-id="103" onClick={handleShow}>
                               <u>adminin</u>
                             </a>
                           </td>
@@ -2648,7 +2618,7 @@ const UserManagement = () => {
                           </td>
                           <td>102</td>
                           <td>
-                            <a href="#" className="edit-btn" data-id="102">
+                            <a href="#" className="edit-btn" data-id="102" onClick={handleShow}>
                               <u>addadd4</u>
                             </a>
                           </td>
@@ -2840,6 +2810,7 @@ const UserManagement = () => {
           </div>
         </div>
       </section>
+      <UserInfo show={show} handleClose={handleClose} />
     </>
   );
 };

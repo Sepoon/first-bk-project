@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect, useCallback } from 'react';
 import { ReactDOM } from 'react';
 import "./App.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.js';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -69,18 +72,22 @@ import BettingRule from './Components/Setting/BettingRule';
 import Alarm from './Components/Setting/Alarm';
 import Chatting from './Components/Setting/Chatting';
 import Terms from './Components/Setting/Terms';
+import AlarmNav from './Includes/AlarmNav';
+import Login from './Login/Login';
 
 
 
 function App() {
+
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter >
         <QuickMenu></QuickMenu>
         <Header></Header>
-        <Routes>
+        <AlarmNav></AlarmNav>
+        <Routes >
           {/* 메인페이지 */}
-          <Route path="/" element={<Main />}></Route>
+          <Route exact path="/" element={<Main />} ></Route>
           {/* 게시물관리 */}
           <Route path="/Customer" element={<Customer />}></Route>
           <Route path="/FAQ" element={<FAQ />}></Route>
@@ -145,7 +152,7 @@ function App() {
           <Route path='/Terms' element={<Terms />}></Route>
           
         </Routes>
-        <Footer></Footer>
+        {/* <Footer showModal={CreateModal} onModalClose={onModalClose}></Footer> */}
       </BrowserRouter>
     </>
   );

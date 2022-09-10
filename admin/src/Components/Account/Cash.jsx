@@ -1,61 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import UserInfo from "../Popup/UserInfo";
 
 const Cash = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <section className="page-wrapper">
-        <div className="alarms-section">
-          <a href="/transaction/currency.asp" className="item">
-            충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_chargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/transaction/exchange.asp" className="item">
-            환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_exchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoChargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoExchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/cs/list.asp" className="item">
-            1:1문의(
-            <span
-              className="text-success font-weight-bold"
-              id="a_oneToOneRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-        </div>
         <div className="container-fluid">
           {/* <!-- Page title --> */}
           <div className="page-header d-print-none">
@@ -70,10 +24,12 @@ const Cash = () => {
               <div className="col-auto ms-auto d-print-none">
                 <div className="btn-list">
                   <form action="" method="get" className="d-flex">
-                    <select defaultValue={'default'} className="form-select w-auto" name="actionType">
-                      <option value="">
-                        전체
-                      </option>
+                    <select
+                      defaultValue={"default"}
+                      className="form-select w-auto"
+                      name="actionType"
+                    >
+                      <option value="">전체</option>
                       <option value="1000">아이템 사용</option>
                       <option value="1001">무료충전</option>
                       <option value="1002">관리자 변경</option>
@@ -98,10 +54,12 @@ const Cash = () => {
                       <option value="1301">미니게임 취소</option>
                       <option value="1302">미니게임 적중</option>
                     </select>
-                    <select defaultValue={'default'} className="form-select w-auto" name="searchBy">
-                      <option value="username">
-                        유저
-                      </option>
+                    <select
+                      defaultValue={"default"}
+                      className="form-select w-auto"
+                      name="searchBy"
+                    >
+                      <option value="username">유저</option>
                       <option value="description">비고</option>
                       <option value="ip">IP</option>
                     </select>
@@ -256,6 +214,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -278,6 +237,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -300,6 +260,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -322,6 +283,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -344,6 +306,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -366,6 +329,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -388,6 +352,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -410,6 +375,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -432,6 +398,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -454,6 +421,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -476,6 +444,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -498,6 +467,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -520,6 +490,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -542,6 +513,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -564,6 +536,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -586,6 +559,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -608,6 +582,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -630,6 +605,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -652,6 +628,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -674,6 +651,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -696,6 +674,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -718,6 +697,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -740,6 +720,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -762,6 +743,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -784,6 +766,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -806,6 +789,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="109"
                             >
                               kaka10
@@ -828,6 +812,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -850,6 +835,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -872,6 +858,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -894,6 +881,7 @@ const Cash = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -1131,6 +1119,7 @@ const Cash = () => {
           </div>
         </div>
       </section>
+      <UserInfo show={show} handleClose={handleClose} />
     </>
   );
 };

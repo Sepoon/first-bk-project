@@ -20,4 +20,4 @@ reportWebVitals();
 export { default as Main } from '../src/Main'
 export { default as Header } from '../src/Includes/Header'
 export { default as Footer } from '../src/Includes/Footer'
-export { default as Customer } from '../src/Components/Board/Customer'
+

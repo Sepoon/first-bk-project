@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from "react";
 import Loading from '../assets/images/logo.png'
 import { Link } from 'react-router-dom';
+import CurrentUser from '../Components/Popup/CurrentUser';
 
 const Header = () => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+
   return (
     <>
-
     <div className='sticky-top'>
       <header className="navbar navbar-expand-md navbar-dark sticky-top d-print-none">
         <div className="container-fluid">
@@ -18,8 +26,8 @@ const Header = () => {
             </Link>
           </h1>
           <div className="navbar-nav flex-row order-md-last">
-            <Link to="#" className="sitehome-btn btn btn-sm" id="open-currentsessions-modal-btn">현재접속자</Link>
-            <Link to="http://miniplay2.com" className="sitehome-btn btn btn-sm">사이트홈</Link>
+            <a className="sitehome-btn btn btn-sm" id="open-currentsessions-modal-btn" onClick={handleShow}>현재접속자</a>
+            <a href="http://miniplay2.com" className="sitehome-btn btn btn-sm">사이트홈</a>
             {/* <!-- <div className="nav-item dropdown d-none d-md-flex me-3">
                 <a href="#" className="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
@@ -34,12 +42,12 @@ const Header = () => {
                                 </div>
                             </div> --> */}
             <div className="nav-item dropdown">
-              <Link to="#" className="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+              <a href="#" className="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
                 <div className="d-none d-xl-block ps-2" style={{ textalign: 'right' }}>
                   <div style={{ fontweight: 'bold', color: '#eeeeee', paddingbottom: '2px' }}><span>tuser1</span> (관리자)</div>
                   <div className="mt-1 small text-muted">접속하신 아이피는 <span>180.191.237.102</span> 입니다.</div>
                 </div>
-              </Link>
+              </a>
               <div className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                 {/* <!--                        <a href="#" className="dropdown-item">Set status</a>-->
 <!--                        <a href="#" className="dropdown-item">Profile & account</a>-->
@@ -678,7 +686,7 @@ const Header = () => {
         </div>
     </div>
 </div>
-
+<CurrentUser show={show} handleClose={handleClose} />
     </>
   );
 };

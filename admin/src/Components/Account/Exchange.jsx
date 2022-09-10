@@ -1,61 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import UserInfo from "../Popup/UserInfo";
 
 const Exchange = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <section className="page-wrapper">
-        <div className="alarms-section">
-          <a href="/transaction/currency.asp" className="item">
-            충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_chargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/transaction/exchange.asp" className="item">
-            환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_exchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노충전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoChargeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="#" className="item">
-            카지노환전신청(
-            <span
-              className="text-success font-weight-bold"
-              id="a_casinoExchangeRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-          <a href="/cs/list.asp" className="item">
-            1:1문의(
-            <span
-              className="text-success font-weight-bold"
-              id="a_oneToOneRequests"
-            >
-              0
-            </span>
-            )
-          </a>
-        </div>
         <div className="container-fluid">
           {/* <!-- Page title --> */}
           <div className="page-header d-print-none">
@@ -231,6 +184,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -273,6 +227,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -315,6 +270,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="123"
                             >
                               kaka11
@@ -338,6 +294,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -380,6 +337,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -422,6 +380,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -464,6 +423,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="73"
                             >
                               jackylu9
@@ -506,6 +466,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="106"
                             >
                               test고고고
@@ -529,6 +490,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="106"
                             >
                               test고고고
@@ -552,6 +514,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="108"
                             >
                               testu2
@@ -588,6 +551,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="108"
                             >
                               testu2
@@ -611,6 +575,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="108"
                             >
                               testu2
@@ -647,6 +612,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="108"
                             >
                               testu2
@@ -683,6 +649,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="108"
                             >
                               testu2
@@ -719,6 +686,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="106"
                             >
                               test고고고
@@ -755,6 +723,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="106"
                             >
                               test고고고
@@ -778,6 +747,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="106"
                             >
                               test고고고
@@ -801,6 +771,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test고고
@@ -824,6 +795,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -847,6 +819,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -870,6 +843,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -893,6 +867,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test고고
@@ -916,6 +891,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test고고
@@ -939,6 +915,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test고고
@@ -962,6 +939,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="80"
                             >
                               test고고
@@ -985,6 +963,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -1008,6 +987,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="61"
                             >
                               ttt1
@@ -1031,6 +1011,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="61"
                             >
                               ttt1
@@ -1054,6 +1035,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="75"
                             >
                               본부장테스트
@@ -1077,6 +1059,7 @@ const Exchange = () => {
                             <a
                               href="#"
                               className="open-user-info-modal"
+                              onClick={handleShow}
                               data-userid="72"
                             >
                               jackylu8
@@ -1152,6 +1135,7 @@ const Exchange = () => {
           </div>
         </div>
       </section>
+      <UserInfo show={show} handleClose={handleClose} />
     </>
   );
 };
