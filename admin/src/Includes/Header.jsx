@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-    <div className='sticky-top'>
+    <div className='sticky-top' >
       <header className="navbar navbar-expand-md navbar-dark sticky-top d-print-none">
         <div className="container-fluid">
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
@@ -141,6 +141,20 @@ const Header = () => {
                                 </span>--> */}
                     <span className="nav-link-title">
                       환경설정
+                    </span>
+                  </Link>
+                </li>
+                <li className="nav-item" data-target=".login">
+                  <Link className="nav-link" to="/LoginPage">
+                    <span className="nav-link-title">
+                      로그인
+                    </span>
+                  </Link>
+                </li>
+                <li className="nav-item" data-target=".register">
+                  <Link className="nav-link" to="/RegisterPage">
+                    <span className="nav-link-title">
+                      회원가입
                     </span>
                   </Link>
                 </li>
